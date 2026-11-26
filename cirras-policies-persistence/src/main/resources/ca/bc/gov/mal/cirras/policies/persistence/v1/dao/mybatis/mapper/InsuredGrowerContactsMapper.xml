@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ca.bc.gov.mal.cirras.policies.persistence.v1.dao.mybatis.mapper.InsuredGrowerContactsMapper">
+
+	<resultMap id="insuredGrowerContactsDtoMap" type="ca.bc.gov.mal.cirras.policies.persistence.v1.dto.InsuredGrowerContactsDto">
+
+		<id property="growerContactsId" column="grower_contacts_id" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		
+		<result property="growerId" column="grower_id" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		<result property="contactsId" column="contacts_id" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		<result property="isPrimaryContactInd" column="primary_contact_flag" javaType="java.lang.Boolean" jdbcType="VARCHAR" />
+		<result property="isActivelyInvolvedInd" column="actively_involved_flag" javaType="java.lang.Boolean" jdbcType="VARCHAR" />
+
+	</resultMap>
+	
+	<select id="select" statementType="CALLABLE" parameterType="java.util.Map">  
+	  {
+        call cirr_pkg_policies_api_v1.get_grower_contacts(
+            #{dataCursor, jdbcType=CURSOR, resultMap=insuredGrowerContactsDtoMap, mode=OUT},
+            #{growerContactsId, javaType=java.lang.Integer, jdbcType=NUMERIC, mode=IN}
+        )
+      }
+	</select>
+	
+</mapper>

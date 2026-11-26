@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ca.bc.gov.mal.cirras.policies.persistence.v1.dao.mybatis.mapper.CommodityTypeVarietyXrefOutboxMapper">
+
+	<resultMap id="commodityTypeVarietyXrefOutboxDtoMap" type="ca.bc.gov.mal.cirras.policies.persistence.v1.dto.CommodityTypeVarietyXrefOutboxDto">
+		<id property="commodityTypeVarietyXrefOutboxId" column="ctvx_ob_id" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		
+		<result property="commodityTypeCode" column="commodity_type_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="varietyId" column="variety_id" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+
+		<result property="transactionType" column="JOURNAL_TRANSACTION_TYPE_CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="entryTimestamp" column="ENTRY_TIMESTAMP" javaType="java.util.Date" jdbcType="DATE" />
+	</resultMap>
+	
+	<select id="select" statementType="CALLABLE" parameterType="java.util.Map">  
+	  {
+        call cirr_pkg_policies_api_v1.select_cmdty_tp_vt_xref_outbox(
+            #{dataCursor, jdbcType=CURSOR, resultMap=commodityTypeVarietyXrefOutboxDtoMap, mode=OUT},
+            #{maxRecords, javaType=java.lang.Integer, jdbcType=NUMERIC, mode=IN}
+        )
+      }
+	</select> 	
+
+	<delete id="delete" statementType="CALLABLE" parameterType="java.util.Map">
+	  {
+        call cirr_pkg_policies_api_v1.delete_cmdty_tp_vt_xref_outbox(
+            #{commodityTypeVarietyXrefOutboxId, javaType=java.lang.Integer, jdbcType=NUMERIC, mode=IN}
+        )
+      }
+	</delete>
+	
+</mapper>
