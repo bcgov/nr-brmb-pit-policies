@@ -6,7 +6,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-import ca.bc.gov.nrs.common.wfone.rest.resource.HeaderConstants;
+import ca.bc.gov.mal.pit.common.rest.resource.HeaderConstants;
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.EndpointsRsrc;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

@@ -4,8 +4,8 @@ import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.GrowerContractYearRsrc
 import ca.bc.gov.mal.cirras.policies.model.v1.GrowerContractYear;
 import ca.bc.gov.mal.cirras.policies.persistence.v1.dto.GrowerContractYearDto;
 import ca.bc.gov.mal.cirras.policies.service.api.v1.model.factory.GrowerContractYearFactory;
-import ca.bc.gov.nrs.wfone.common.rest.endpoints.resource.factory.BaseResourceFactory;
-import ca.bc.gov.nrs.wfone.common.service.api.model.factory.FactoryException;
+import ca.bc.gov.mal.pit.common.rest.endpoints.resource.factory.BaseResourceFactory;
+import ca.bc.gov.mal.pit.common.service.api.model.factory.FactoryException;
 
 public class GrowerContractYearRsrcFactory extends BaseResourceFactory implements GrowerContractYearFactory {
 	

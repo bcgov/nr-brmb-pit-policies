@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.support.ResourceBundleMessageSource;
 
-import ca.bc.gov.nrs.wfone.common.persistence.code.dao.CodeTableConfig;
-import ca.bc.gov.nrs.wfone.common.persistence.code.spring.CodePersistenceSpringConfig;
+import ca.bc.gov.mal.pit.common.persistence.code.dao.CodeTableConfig;
+import ca.bc.gov.mal.pit.common.persistence.code.spring.CodePersistenceSpringConfig;
 import ca.bc.gov.mal.cirras.policies.service.api.v1.util.CachedCodeTables;
 
 

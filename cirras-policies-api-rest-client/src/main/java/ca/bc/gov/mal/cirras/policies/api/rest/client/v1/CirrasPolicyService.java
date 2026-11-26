@@ -5,8 +5,8 @@ import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.EndpointsRsrc;
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.InsuranceClaimListRsrc;
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.InsuranceClaimRsrc;
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.ProductListRsrc;
-import ca.bc.gov.nrs.common.wfone.rest.resource.HealthCheckResponseRsrc;
-import ca.bc.gov.nrs.wfone.common.rest.client.RestClientServiceException;
+import ca.bc.gov.mal.pit.common.rest.resource.HealthCheckResponseRsrc;
+import ca.bc.gov.mal.pit.common.rest.client.RestClientServiceException;
 
 public interface CirrasPolicyService {
 	

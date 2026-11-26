@@ -18,13 +18,13 @@ import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.InsuranceClaimListRsrc
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.InsuranceClaimRsrc;
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.ProductListRsrc;
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.types.ResourceTypes;
-import ca.bc.gov.nrs.common.wfone.rest.resource.BaseResource;
-import ca.bc.gov.nrs.common.wfone.rest.resource.RelLink;
-import ca.bc.gov.nrs.wfone.common.rest.client.BadRequestException;
-import ca.bc.gov.nrs.wfone.common.rest.client.BaseRestServiceClient;
-import ca.bc.gov.nrs.wfone.common.rest.client.GenericRestDAO;
-import ca.bc.gov.nrs.wfone.common.rest.client.Response;
-import ca.bc.gov.nrs.wfone.common.rest.client.RestDAOException;
+import ca.bc.gov.mal.pit.common.rest.resource.BaseResource;
+import ca.bc.gov.mal.pit.common.rest.resource.RelLink;
+import ca.bc.gov.mal.pit.common.rest.client.BadRequestException;
+import ca.bc.gov.mal.pit.common.rest.client.BaseRestServiceClient;
+import ca.bc.gov.mal.pit.common.rest.client.GenericRestDAO;
+import ca.bc.gov.mal.pit.common.rest.client.Response;
+import ca.bc.gov.mal.pit.common.rest.client.RestDAOException;
 
 public class CirrasPolicyServiceImpl extends BaseRestServiceClient implements CirrasPolicyService {
 

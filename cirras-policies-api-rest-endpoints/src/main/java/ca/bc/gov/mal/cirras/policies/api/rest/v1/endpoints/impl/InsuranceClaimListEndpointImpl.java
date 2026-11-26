@@ -19,9 +19,9 @@ import ca.bc.gov.mal.cirras.policies.api.rest.v1.parameters.validation.Parameter
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.InsuranceClaimListRsrc;
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.InsuranceClaimRsrc;
 import ca.bc.gov.mal.cirras.policies.service.api.v1.CirrasPolicyService;
-import ca.bc.gov.nrs.common.wfone.rest.resource.MessageListRsrc;
-import ca.bc.gov.nrs.wfone.common.model.Message;
-import ca.bc.gov.nrs.wfone.common.rest.endpoints.BaseEndpointsImpl;
+import ca.bc.gov.mal.pit.common.rest.resource.MessageListRsrc;
+import ca.bc.gov.mal.pit.common.model.Message;
+import ca.bc.gov.mal.pit.common.rest.endpoints.BaseEndpointsImpl;
 
 public class InsuranceClaimListEndpointImpl extends BaseEndpointsImpl implements InsuranceClaimListEndpoint {
 	

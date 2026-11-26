@@ -11,7 +11,7 @@ import ca.bc.gov.mal.cirras.policies.api.rest.v1.endpoints.security.Scopes;
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.parameters.validation.ParameterValidator;
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.ProductListRsrc;
 import ca.bc.gov.mal.cirras.policies.service.api.v1.CirrasPolicyService;
-import ca.bc.gov.nrs.wfone.common.rest.endpoints.BaseEndpointsImpl;
+import ca.bc.gov.mal.pit.common.rest.endpoints.BaseEndpointsImpl;
 
 public class ProductListEndpointImpl extends BaseEndpointsImpl implements ProductListEndpoint {
 	

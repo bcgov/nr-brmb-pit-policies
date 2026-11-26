@@ -18,7 +18,7 @@ import ca.bc.gov.mal.cirras.policies.api.rest.v1.endpoints.security.Scopes;
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.EndpointsRsrc;
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.ProductListRsrc;
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.ProductRsrc;
-import ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.Oauth2ClientException;
+import ca.bc.gov.mal.pit.common.webade.oauth2.token.client.Oauth2ClientException;
 
 public class ProductEndpointTest extends EndpointsTest {
 	private static final Logger logger = LoggerFactory.getLogger(ProductEndpointTest.class);

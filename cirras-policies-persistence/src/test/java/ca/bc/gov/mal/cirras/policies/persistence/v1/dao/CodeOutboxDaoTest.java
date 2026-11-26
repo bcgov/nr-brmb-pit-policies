@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import ca.bc.gov.mal.cirras.policies.persistence.v1.dto.CodeOutboxDto;
 import ca.bc.gov.mal.cirras.policies.persistence.v1.spring.PersistenceSpringConfig;
-import ca.bc.gov.nrs.wfone.common.persistence.dao.DaoException;
+import ca.bc.gov.mal.pit.common.persistence.dao.DaoException;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)

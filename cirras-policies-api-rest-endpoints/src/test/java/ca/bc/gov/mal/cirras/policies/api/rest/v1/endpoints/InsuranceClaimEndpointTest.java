@@ -18,7 +18,7 @@ import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.InsuranceClaimListRsrc
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.InsuranceClaimRsrc;
 import ca.bc.gov.mal.cirras.policies.persistence.v1.dao.ClaimDao;
 import ca.bc.gov.mal.cirras.policies.persistence.v1.dto.ClaimDto;
-import ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.Oauth2ClientException;
+import ca.bc.gov.mal.pit.common.webade.oauth2.token.client.Oauth2ClientException;
 
 public class InsuranceClaimEndpointTest extends EndpointsTest {
 	private static final Logger logger = LoggerFactory.getLogger(InsuranceClaimEndpointTest.class);

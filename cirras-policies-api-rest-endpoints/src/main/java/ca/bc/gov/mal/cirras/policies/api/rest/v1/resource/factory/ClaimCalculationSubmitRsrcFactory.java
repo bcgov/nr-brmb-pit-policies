@@ -7,7 +7,7 @@ import ca.bc.gov.mal.cirras.policies.persistence.v1.dto.ClaimCalculationSubmitDt
 import ca.bc.gov.mal.cirras.policies.persistence.v1.dto.UserDto;
 import ca.bc.gov.mal.cirras.policies.service.api.v1.model.factory.ClaimCalculationSubmitFactory;
 import ca.bc.gov.mal.cirras.policies.service.api.v1.util.PoliciesServiceEnums;
-import ca.bc.gov.nrs.wfone.common.rest.endpoints.resource.factory.BaseResourceFactory;
+import ca.bc.gov.mal.pit.common.rest.endpoints.resource.factory.BaseResourceFactory;
 
 public class ClaimCalculationSubmitRsrcFactory extends BaseResourceFactory implements ClaimCalculationSubmitFactory {
 	

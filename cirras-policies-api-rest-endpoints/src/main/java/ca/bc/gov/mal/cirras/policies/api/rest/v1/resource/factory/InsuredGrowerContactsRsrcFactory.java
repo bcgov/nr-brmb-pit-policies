@@ -4,8 +4,8 @@ import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.InsuredGrowerContactsR
 import ca.bc.gov.mal.cirras.policies.model.v1.InsuredGrowerContacts;
 import ca.bc.gov.mal.cirras.policies.persistence.v1.dto.InsuredGrowerContactsDto;
 import ca.bc.gov.mal.cirras.policies.service.api.v1.model.factory.InsuredGrowerContactsFactory;
-import ca.bc.gov.nrs.wfone.common.rest.endpoints.resource.factory.BaseResourceFactory;
-import ca.bc.gov.nrs.wfone.common.service.api.model.factory.FactoryException;
+import ca.bc.gov.mal.pit.common.rest.endpoints.resource.factory.BaseResourceFactory;
+import ca.bc.gov.mal.pit.common.service.api.model.factory.FactoryException;
 
 public class InsuredGrowerContactsRsrcFactory extends BaseResourceFactory implements InsuredGrowerContactsFactory {
 

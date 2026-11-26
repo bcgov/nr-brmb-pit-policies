@@ -9,9 +9,9 @@ import jakarta.ws.rs.core.Response;
 
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.endpoints.security.Scopes;
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.InsuranceClaimRsrc;
-import ca.bc.gov.nrs.common.wfone.rest.resource.HeaderConstants;
-import ca.bc.gov.nrs.common.wfone.rest.resource.MessageListRsrc;
-import ca.bc.gov.nrs.wfone.common.rest.endpoints.BaseEndpoints;
+import ca.bc.gov.mal.pit.common.rest.resource.HeaderConstants;
+import ca.bc.gov.mal.pit.common.rest.resource.MessageListRsrc;
+import ca.bc.gov.mal.pit.common.rest.endpoints.BaseEndpoints;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;

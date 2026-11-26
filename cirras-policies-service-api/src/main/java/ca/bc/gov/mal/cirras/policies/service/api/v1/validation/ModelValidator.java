@@ -13,11 +13,11 @@ import ca.bc.gov.mal.cirras.policies.persistence.v1.dto.ClaimCalculationSubmitDt
 import ca.bc.gov.mal.cirras.policies.persistence.v1.dto.UserDto;
 import ca.bc.gov.mal.cirras.policies.service.api.v1.util.CachedCodeTables;
 import ca.bc.gov.mal.cirras.policies.service.api.v1.util.PoliciesServiceEnums;
-import ca.bc.gov.nrs.wfone.common.model.Message;
-import ca.bc.gov.nrs.wfone.common.persistence.code.dto.CodeDto;
-import ca.bc.gov.nrs.wfone.common.persistence.dao.DaoException;
-import ca.bc.gov.nrs.wfone.common.service.api.validation.BaseValidator;
-import ca.bc.gov.nrs.wfone.common.utils.MessageBuilder;
+import ca.bc.gov.mal.pit.common.model.Message;
+import ca.bc.gov.mal.pit.common.persistence.code.dto.CodeDto;
+import ca.bc.gov.mal.pit.common.persistence.dao.DaoException;
+import ca.bc.gov.mal.pit.common.service.api.validation.BaseValidator;
+import ca.bc.gov.mal.pit.common.utils.MessageBuilder;
 
 
 public class ModelValidator extends BaseValidator {

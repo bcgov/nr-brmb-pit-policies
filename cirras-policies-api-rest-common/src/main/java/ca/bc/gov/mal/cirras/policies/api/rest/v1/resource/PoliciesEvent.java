@@ -11,9 +11,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-import ca.bc.gov.nrs.common.wfone.rest.resource.BaseResource;
-import ca.bc.gov.nrs.common.wfone.rest.resource.transformers.InstantJacksonDeserializer;
-import ca.bc.gov.nrs.common.wfone.rest.resource.transformers.InstantJacksonSerializer;
+import ca.bc.gov.mal.pit.common.rest.resource.BaseResource;
+import ca.bc.gov.mal.pit.common.rest.resource.transformers.InstantJacksonDeserializer;
+import ca.bc.gov.mal.pit.common.rest.resource.transformers.InstantJacksonSerializer;
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.types.ResourceTypes;
 
 @JsonSubTypes({ @Type(value = PoliciesEvent.class, name = ResourceTypes.NAMESPACE+"publishEvent") })

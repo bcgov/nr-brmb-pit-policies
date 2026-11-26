@@ -19,8 +19,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 
 import ca.bc.gov.mal.cirras.policies.service.api.v1.util.PropertyUtils;
-import ca.bc.gov.nrs.wfone.common.utils.ApplicationContextProvider;
-import ca.bc.gov.nrs.wfone.common.webade.authentication.WebAdeAuthentication;
+import ca.bc.gov.mal.pit.common.utils.ApplicationContextProvider;
+import ca.bc.gov.mal.pit.common.webade.authentication.WebAdeAuthentication;
 
 public class AsyncMasterTask extends AsynchronousTimerTask {
 

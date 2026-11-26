@@ -34,7 +34,7 @@ import ca.bc.gov.mal.cirras.policies.service.api.v1.model.factory.TelecomFactory
 
 @Configuration
 @Import({
-	CodeHierarchySpringConfig.class,  // can't remove this because some wfone stuff depends on it
+	CodeHierarchySpringConfig.class,  // can't remove this because some library stuff depends on it
 	CodeTableSpringConfig.class, 
 	PersistenceSpringConfig.class
 })

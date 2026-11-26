@@ -3,7 +3,7 @@ package ca.bc.gov.mal.cirras.policies.persistence.v1.dto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ca.bc.gov.nrs.wfone.common.persistence.dto.BaseDto;
+import ca.bc.gov.mal.pit.common.persistence.dto.BaseDto;
 
 public class VarietyDto extends BaseDto<VarietyDto> {
 
