@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ca.bc.gov.mal.cirras.policies.persistence.v1.dao.mybatis.mapper.GrowerMapper">
+
+	<resultMap id="growerDtoMap" type="ca.bc.gov.mal.cirras.policies.persistence.v1.dto.GrowerDto">
+		<id property="growerNumber" column="GROWER_NUMBER" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+
+		<result property="growerId" column="GROWER_ID" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		<result property="vendorNumber" column="VENDOR_NUMBER" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="growerName" column="GROWER_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="growerAddressLine1" column="GROWER_ADDRESS_LINE1" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="growerAddressLine2" column="GROWER_ADDRESS_LINE2" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="growerPostalCode" column="GROWER_POSTAL_CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="growerCityId" column="GROWER_CITY_ID" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		<result property="growerCity" column="GROWER_CITY" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="growerProvince" column="GROWER_PROVINCE" javaType="java.lang.String" jdbcType="VARCHAR" />
+
+	</resultMap>
+	
+	<select id="select" statementType="CALLABLE" parameterType="java.util.Map">  
+	  {
+        call cirr_pkg_policies_api_v1.get_insured_grower(
+            #{dataCursor, jdbcType=CURSOR, resultMap=growerDtoMap, mode=OUT},
+            #{growerId, javaType=java.lang.Integer, jdbcType=NUMERIC, mode=IN}
+        )
+      }
+	</select>
+	
+</mapper>

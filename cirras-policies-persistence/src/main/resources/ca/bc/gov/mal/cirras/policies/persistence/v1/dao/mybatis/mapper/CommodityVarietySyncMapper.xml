@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ca.bc.gov.mal.cirras.policies.persistence.v1.dao.mybatis.mapper.CommodityVarietySyncMapper">
+
+	<resultMap id="commodityVarietySyncDtoMap" type="ca.bc.gov.mal.cirras.policies.persistence.v1.dto.CommodityVarietySyncDto">
+		<id property="cropId" column="CROP_ID" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+
+		<result property="cropName" column="CROP_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="parentCropId" column="PARENT_CROP_ID" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		<result property="isProductInsurable" column="IS_PRODUCT_INSURABLE" javaType="java.lang.Boolean" jdbcType="VARCHAR" />
+		<result property="isInventoryCrop" column="IS_INVENTORY_CROP" javaType="java.lang.Boolean" jdbcType="VARCHAR" />
+		<result property="insurancePlanId" column="insurance_plan_id" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		<result property="shortLabel" column="short_label" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="plantDurationTypeCode" column="plant_duration_type_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="isYieldCrop" column="is_yield_crop" javaType="java.lang.Boolean" jdbcType="VARCHAR" />
+		<result property="isUnderwritingCrop" column="is_underwriting_crop" javaType="java.lang.Boolean" jdbcType="VARCHAR" />
+		<result property="yieldMeasUnitTypeCode" column="yield_meas_unit_type_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="yieldDecimalPrecision" column="yield_decimal_precision" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		<result property="isCropInsuranceEligible" column="is_crop_insurance_eligible" javaType="java.lang.Boolean" jdbcType="VARCHAR" />
+		<result property="isPlantInsuranceEligible" column="is_plant_insurance_eligible" javaType="java.lang.Boolean" jdbcType="VARCHAR" />
+		<result property="isOtherInsuranceEligible" column="is_other_insurance_eligible" javaType="java.lang.Boolean" jdbcType="VARCHAR" />
+
+	</resultMap>
+	
+	<select id="select" statementType="CALLABLE" parameterType="java.util.Map">  
+	  {
+        call cirr_pkg_policies_api_v1.get_crop_type(
+            #{dataCursor, jdbcType=CURSOR, resultMap=commodityVarietySyncDtoMap, mode=OUT},
+            #{cropId, javaType=java.lang.Integer, jdbcType=NUMERIC, mode=IN}
+        )
+      }
+	</select>
+	
+</mapper>

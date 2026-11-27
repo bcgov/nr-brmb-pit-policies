@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ca.bc.gov.mal.cirras.policies.persistence.v1.dao.mybatis.mapper.GrowerOutboxMapper">
+
+	<resultMap id="growerOutboxDtoMap" type="ca.bc.gov.mal.cirras.policies.persistence.v1.dto.GrowerOutboxDto">
+		<id property="growerOutboxId" column="IG_OB_ID" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		
+		<result property="growerId" column="IG_ID" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		<result property="transactionType" column="JOURNAL_TRANSACTION_TYPE_CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="entryTimestamp" column="ENTRY_TIMESTAMP" javaType="java.util.Date" jdbcType="DATE" />
+	</resultMap>
+	
+	<select id="select" statementType="CALLABLE" parameterType="java.util.Map">  
+	  {
+        call cirr_pkg_policies_api_v1.select_grower_outbox(
+            #{dataCursor, jdbcType=CURSOR, resultMap=growerOutboxDtoMap, mode=OUT},
+            #{maxRecords, javaType=java.lang.Integer, jdbcType=NUMERIC, mode=IN}
+        )
+      }
+	</select> 	
+
+	<delete id="delete" statementType="CALLABLE" parameterType="java.util.Map">
+	  {
+        call cirr_pkg_policies_api_v1.delete_grower_outbox(
+            #{growerOutboxId, javaType=java.lang.Integer, jdbcType=NUMERIC, mode=IN}
+        )
+      }
+	</delete>
+	
+</mapper>

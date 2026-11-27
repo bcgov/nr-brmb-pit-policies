@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ca.bc.gov.mal.cirras.policies.persistence.v1.dao.mybatis.mapper.ClaimCalculationSubmitMapper">
+
+	<resultMap id="claimCalculationSubmitDtoMap" type="ca.bc.gov.mal.cirras.policies.persistence.v1.dto.ClaimCalculationSubmitDto">
+		<id property="colId" column="COL_ID" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		
+		<result property="claimStatus" column="CLAIM_STATUS" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="claimType" column="CLAIM_TYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="damageEstimate" column="DAMAGE_ESTIMATE" javaType="java.lang.Double" jdbcType="NUMERIC" />
+		<result property="sysRecordGuid" column="SYS_RECORD_GUID" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="updateUserid" column="UPDATE_USERID" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="iplId" column="IPL_ID" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		<result property="iplSysRecordGuid" column="IPL_SYS_RECORD_GUID" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="usrUsrIdRecommendedBy" column="USR_USR_ID_RECOMMENDED_BY" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		<result property="usrUsrIdApprovedBy" column="USR_USR_ID_APPROVED_BY" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		<result property="claimReceived" column="CLAIM_RECEIVED" javaType="java.util.Date" jdbcType="DATE" />
+		<result property="approvedDate" column="APPROVED_DATE" javaType="java.util.Date" jdbcType="DATE" />
+		<result property="recommendedDate" column="RECOMMENDED_DATE" javaType="java.util.Date" jdbcType="DATE" />
+		<result property="monitoredBy" column="MONITORED_BY" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		<result property="monitoredDate" column="MONITORED_DATE" javaType="java.util.Date" jdbcType="DATE" />
+		<result property="growerNotice" column="GROWER_NOTICE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="overwriteSavedNotice" column="OVERWRITE_SAVED_NOTICE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="claimAmount" column="CLAIM_AMOUNT" javaType="java.lang.Double" jdbcType="NUMERIC" />
+		<result property="holdbackAmount" column="HOLDBACK_AMOUNT" javaType="java.lang.Double" jdbcType="NUMERIC" />
+		<result property="totalCoverage" column="TOTAL_COVERAGE" javaType="java.lang.Double" jdbcType="NUMERIC" />
+		<result property="hasChequeReqInd" column="HAS_CHEQUE_REQ_FLAG" javaType="java.lang.Boolean" jdbcType="VARCHAR" />
+
+	</resultMap>
+	
+
+	<select id="select" statementType="CALLABLE" parameterType="java.util.Map">  
+	  {
+        call cirr_pkg_policies_api_v1.get_claim_of_losses (
+                #{dataCursor, jdbcType=CURSOR, resultMap=claimCalculationSubmitDtoMap, mode=OUT},
+            	#{claimNumber, javaType=java.lang.Integer, jdbcType=NUMERIC, mode=IN}
+			  ) 
+      }
+	</select> 
+	
+	<update id="updateClaimAndPayments" statementType="CALLABLE">
+	  {
+		  call cirr_pkg_policies_api_v1.update_claim_and_payments
+		  (
+		    #{dto.colId, javaType=java.lang.Integer , jdbcType=NUMERIC, mode=IN},
+			#{dto.claimAmount, javaType=java.lang.Double , jdbcType=NUMERIC, mode=IN},
+			#{dto.holdbackAmount, javaType=java.lang.Double , jdbcType=NUMERIC, mode=IN},
+			#{dto.claimStatus, javaType=java.lang.String , jdbcType=VARCHAR, mode=IN},
+			#{dto.claimType, javaType=java.lang.String , jdbcType=VARCHAR, mode=IN},
+			#{dto.damageEstimate, javaType=java.lang.Double , jdbcType=NUMERIC, mode=IN},
+			#{dto.sysRecordGuid, javaType=java.lang.String , jdbcType=VARCHAR, mode=IN},
+			#{dto.updateUserid, javaType=java.lang.String , jdbcType=VARCHAR, mode=IN},
+			#{dto.iplId, javaType=java.lang.Integer , jdbcType=NUMERIC, mode=IN},
+			#{dto.iplSysRecordGuid, javaType=java.lang.String , jdbcType=VARCHAR, mode=IN},
+			#{dto.usrUsrIdRecommendedBy, javaType=java.lang.Integer , jdbcType=NUMERIC, mode=IN},
+			#{dto.usrUsrIdApprovedBy, javaType=java.lang.Integer , jdbcType=NUMERIC, mode=IN},
+			#{dto.claimReceived, javaType=java.util.Date , jdbcType=DATE, mode=IN},
+			#{dto.approvedDate, javaType=java.util.Date , jdbcType=DATE, mode=IN},
+			#{dto.recommendedDate, javaType=java.util.Date , jdbcType=DATE, mode=IN},
+			#{dto.monitoredBy, javaType=java.lang.Integer , jdbcType=NUMERIC, mode=IN},
+			#{dto.monitoredDate, javaType=java.util.Date , jdbcType=DATE, mode=IN},
+			#{dto.growerNotice, javaType=java.lang.String , jdbcType=VARCHAR, mode=IN},
+			#{dto.overwriteSavedNotice, javaType=java.lang.String , jdbcType=VARCHAR, mode=IN}
+		  )
+	  }
+	</update> 
+	
+	
+	
+</mapper>

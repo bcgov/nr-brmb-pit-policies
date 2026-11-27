@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ca.bc.gov.mal.cirras.policies.persistence.v1.dao.mybatis.mapper.ProductMapper">
+
+	<resultMap id="productDtoMap" type="ca.bc.gov.mal.cirras.policies.persistence.v1.dto.ProductDto">
+		<!-- Populated by all -->
+		<id property="productId" column="product_id" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		<result property="insurancePolicyId" column="insurance_policy_id" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+
+		<!-- Populated by selectProductsDetails and select -->
+		<result property="icuId" column="icu_id" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+
+		<!-- Populated by selectProductsDetails and selectProduct -->		
+		<result property="cropCommodityId" column="crop_commodity_id" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		<result property="commodityCoverageCode" column="commodity_coverage_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="productStatusCode" column="product_status_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="deductibleLevel" column="deductible_level" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		<result property="productionGuarantee" column="production_guarantee" javaType="java.lang.Double" jdbcType="NUMERIC" />
+		<result property="probableYield" column="probable_yield" javaType="java.lang.Double" jdbcType="NUMERIC" />
+		<result property="insuredByMeasType" column="insured_by_meas_type" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="insurableValueHundredPercent" column="insurable_value_hundred_percent" javaType="java.lang.Double" jdbcType="NUMERIC" />
+		<result property="coverageDollars" column="coverage_dollars" javaType="java.lang.Double" jdbcType="NUMERIC" />
+		<result property="cropYear" column="crop_year" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		<result property="insurancePlanId" column="insurance_plan_id" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+
+		<!-- Populated by selectProductsDetails -->
+		<result property="commodityName" column="commodity_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="acres" column="acres" javaType="java.lang.Double" jdbcType="NUMERIC" />
+		<result property="unseededSelectedInsurableValue" column="u_selected_insurable_value" javaType="java.lang.Double" jdbcType="NUMERIC" />
+		<result property="unseededInsurableValueHundredPercent" column="u_insurable_value_hundred_percent" javaType="java.lang.Double" jdbcType="NUMERIC" />
+		<result property="selectedInsurableValue" column="selected_insurable_value" javaType="java.lang.Double" jdbcType="NUMERIC" />
+		<result property="spotLossCoverageAmountPerAcre" column="s_coverage_amt_per_acre" javaType="java.lang.Double" jdbcType="NUMERIC" />
+
+	</resultMap>
+
+	<!-- Returns all products for given policy, including orphan icus, for all plans. -->	
+	<select id="select" statementType="CALLABLE" parameterType="java.util.Map">  
+	  {
+        call cirr_pkg_policies_api_v1.get_products(
+            #{dataCursor, jdbcType=CURSOR, resultMap=productDtoMap, mode=OUT},
+            #{insurancePolicyId, javaType=java.lang.Integer, jdbcType=NUMERIC, mode=IN}
+        )
+      }
+	</select>
+
+	<!-- Returns all PI products for given policy, excluding orphan icus, for GRAIN only. -->	
+	<select id="selectProductsDetails" statementType="CALLABLE" parameterType="java.util.Map">  
+	  {
+        call cirr_pkg_policies_api_v1.get_products_details(
+            #{dataCursor, jdbcType=CURSOR, resultMap=productDtoMap, mode=OUT},
+            #{insurancePolicyId, javaType=java.lang.Integer, jdbcType=NUMERIC, mode=IN},
+            #{productId, javaType=java.lang.Integer, jdbcType=NUMERIC, mode=IN},
+            #{commodityCoverageCode, javaType=java.lang.String, jdbcType=VARCHAR, mode=IN}
+        )
+      }
+	</select>
+	
+	<!-- Returns product for given product id, only if supported by data sync. -->
+	<select id="selectProduct" statementType="CALLABLE" parameterType="java.util.Map">  
+	  {
+        call cirr_pkg_policies_api_v1.get_product_purchase(
+            #{dataCursor, jdbcType=CURSOR, resultMap=productDtoMap, mode=OUT},
+            #{productId, javaType=java.lang.Integer, jdbcType=NUMERIC, mode=IN}
+        )
+      }
+	</select>	
+	
+</mapper>

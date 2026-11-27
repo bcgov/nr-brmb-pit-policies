@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ca.bc.gov.mal.cirras.policies.persistence.v1.dao.mybatis.mapper.CoveragePerilSyncMapper">
+
+	<resultMap id="coveragePerilSyncDtoMap" type="ca.bc.gov.mal.cirras.policies.persistence.v1.dto.CoveragePerilSyncDto">
+		<id property="coveragePerilId" column="COVERAGE_PERIL_ID" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+
+		<result property="perilCode" column="PERIL_CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="isActive" column="ACTIVE_FLAG" javaType="java.lang.Boolean" jdbcType="VARCHAR" />
+		<result property="cropCommodityId" column="CROP_ID" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		<result property="commodityCoverageCode" column="CC_TYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="cropCoverageId" column="CC_ID" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+
+	</resultMap>
+	
+	<select id="select" statementType="CALLABLE" parameterType="java.util.Map">  
+	  {
+        call cirr_pkg_policies_api_v1.get_coverage_peril_type(
+            #{dataCursor, jdbcType=CURSOR, resultMap=coveragePerilSyncDtoMap, mode=OUT},
+            #{coveragePerilId, javaType=java.lang.Integer, jdbcType=NUMERIC, mode=IN}
+        )
+      }
+	</select>
+	
+</mapper>

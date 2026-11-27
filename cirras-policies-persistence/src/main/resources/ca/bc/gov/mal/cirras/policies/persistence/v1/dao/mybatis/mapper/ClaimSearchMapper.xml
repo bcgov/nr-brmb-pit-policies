@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ca.bc.gov.mal.cirras.policies.persistence.v1.dao.mybatis.mapper.ClaimSearchMapper">
+
+	<resultMap id="claimSearchDtoMap" type="ca.bc.gov.mal.cirras.policies.persistence.v1.dto.ClaimSearchDto">
+		<id property="claimNumber" column="CLAIM_NUMBER" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		
+		<result property="policyNumber" column="POLICY_NUMBER" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="growerNumber" column="GROWER_NUMBER" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		<result property="growersLegalName" column="GROWERS_LEGAL_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="insurancePlanId" column="INSURANCE_PLAN_ID" javaType="java.lang.Integer" jdbcType="NUMERIC" />		
+		<result property="planName" column="PLAN_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="cropCoverage" column="CROP_COVERAGE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="cropCoverageCode" column="CROP_COVERAGE_CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="commodityName" column="COMMODITY_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="commodityId" column="COMMODITY_ID" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		<result property="claimStatus" column="CLAIM_STATUS" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="claimStatusCode" column="CLAIM_STATUS_CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="claimType" column="CLAIM_TYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		
+	</resultMap>
+
+	<select id="select" statementType="CALLABLE" parameterType="java.util.Map">  
+	  {
+        call cirr_pkg_policies_api_v1.search_claims_prc(
+            #{dataCursor, jdbcType=CURSOR, resultMap=claimSearchDtoMap, mode=OUT},
+            #{claimNumber, javaType=java.lang.Integer, jdbcType=NUMERIC, mode=IN},
+            #{policyNumber, javaType=java.lang.String, jdbcType=VARCHAR, mode=IN}
+        )
+      }
+	</select> 	
+</mapper>

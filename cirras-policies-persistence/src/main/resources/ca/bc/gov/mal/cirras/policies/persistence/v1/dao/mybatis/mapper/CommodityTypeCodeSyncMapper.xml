@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ca.bc.gov.mal.cirras.policies.persistence.v1.dao.mybatis.mapper.CommodityTypeCodeSyncMapper">
+
+	<resultMap id="commodityTypeCodeSyncDtoMap" type="ca.bc.gov.mal.cirras.policies.persistence.v1.dto.CommodityTypeCodeSyncDto">
+		<id property="commodityTypeCode" column="commodity_type_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+
+		<result property="description" column="description" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="isActive" column="active_flag" javaType="java.lang.Boolean" jdbcType="VARCHAR" />
+		<result property="cropId" column="crop_id" javaType="java.lang.Integer" jdbcType="NUMERIC" />
+
+	</resultMap>
+	
+	<select id="select" statementType="CALLABLE" parameterType="java.util.Map">  
+	  {
+        call cirr_pkg_policies_api_v1.get_commodity_type_code(
+            #{dataCursor, jdbcType=CURSOR, resultMap=commodityTypeCodeSyncDtoMap, mode=OUT},
+            #{commodityTypeCode, javaType=java.lang.String, jdbcType=VARCHAR, mode=IN}
+        )
+      }
+	</select>
+	
+</mapper>
