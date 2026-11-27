@@ -11,8 +11,8 @@ import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
-import ca.bc.gov.nrs.wfone.common.rest.endpoints.filters.RequestMetricsFilter;
-import ca.bc.gov.nrs.wfone.common.rest.endpoints.filters.VersionForwardingFilter;
+import ca.bc.gov.mal.pit.common.rest.endpoints.filters.RequestMetricsFilter;
+import ca.bc.gov.mal.pit.common.rest.endpoints.filters.VersionForwardingFilter;
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.jersey.JerseyApplication;
 
 @Order(Ordered.HIGHEST_PRECEDENCE)

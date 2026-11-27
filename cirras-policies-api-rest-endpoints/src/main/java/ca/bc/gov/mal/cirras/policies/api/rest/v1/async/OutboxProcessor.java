@@ -11,8 +11,8 @@ import org.slf4j.Logger;
 import ca.bc.gov.mal.cirras.policies.model.v1.BaseOutbox;
 import ca.bc.gov.mal.cirras.policies.service.api.v1.CirrasPolicyService;
 import ca.bc.gov.mal.cirras.policies.service.api.v1.util.PropertyUtils;
-import ca.bc.gov.nrs.wfone.common.service.api.ServiceException;
-import ca.bc.gov.nrs.wfone.common.webade.authentication.WebAdeAuthentication;
+import ca.bc.gov.mal.pit.common.service.api.ServiceException;
+import ca.bc.gov.mal.pit.common.webade.authentication.WebAdeAuthentication;
 
 
 

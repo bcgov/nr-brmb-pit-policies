@@ -85,12 +85,12 @@ import ca.bc.gov.mal.cirras.policies.persistence.v1.dao.mybatis.TelecomDaoImpl;
 import ca.bc.gov.mal.cirras.policies.persistence.v1.dao.mybatis.TelecomOutboxDaoImpl;
 import ca.bc.gov.mal.cirras.policies.persistence.v1.dao.mybatis.UserDaoImpl;
 import ca.bc.gov.mal.cirras.policies.persistence.v1.dao.mybatis.VarietyDaoImpl;
-import ca.bc.gov.nrs.wfone.common.persistence.dao.mybatis.BooleanTypeHandler;
-import ca.bc.gov.nrs.wfone.common.persistence.dao.mybatis.InstantTypeHandler;
-import ca.bc.gov.nrs.wfone.common.persistence.dao.mybatis.LocalDateTimeTypeHandler;
-import ca.bc.gov.nrs.wfone.common.persistence.dao.mybatis.LocalDateTypeHandler;
-import ca.bc.gov.nrs.wfone.common.persistence.dao.mybatis.LocalTimeTypeHandler;
-import ca.bc.gov.nrs.wfone.common.persistence.dao.mybatis.ResetDirtyInterceptor;
+import ca.bc.gov.mal.pit.common.persistence.dao.mybatis.BooleanTypeHandler;
+import ca.bc.gov.mal.pit.common.persistence.dao.mybatis.InstantTypeHandler;
+import ca.bc.gov.mal.pit.common.persistence.dao.mybatis.LocalDateTimeTypeHandler;
+import ca.bc.gov.mal.pit.common.persistence.dao.mybatis.LocalDateTypeHandler;
+import ca.bc.gov.mal.pit.common.persistence.dao.mybatis.LocalTimeTypeHandler;
+import ca.bc.gov.mal.pit.common.persistence.dao.mybatis.ResetDirtyInterceptor;
 
 @Configuration
 @EnableTransactionManagement

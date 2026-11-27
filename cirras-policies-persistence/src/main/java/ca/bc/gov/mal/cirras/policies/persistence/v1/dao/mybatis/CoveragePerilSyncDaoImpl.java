@@ -12,8 +12,8 @@ import org.springframework.stereotype.Repository;
 import ca.bc.gov.mal.cirras.policies.persistence.v1.dao.CoveragePerilSyncDao;
 import ca.bc.gov.mal.cirras.policies.persistence.v1.dao.mybatis.mapper.CoveragePerilSyncMapper;
 import ca.bc.gov.mal.cirras.policies.persistence.v1.dto.CoveragePerilSyncDto;
-import ca.bc.gov.nrs.wfone.common.persistence.dao.DaoException;
-import ca.bc.gov.nrs.wfone.common.persistence.dao.mybatis.BaseDao;
+import ca.bc.gov.mal.pit.common.persistence.dao.DaoException;
+import ca.bc.gov.mal.pit.common.persistence.dao.mybatis.BaseDao;
 
 
 @Repository

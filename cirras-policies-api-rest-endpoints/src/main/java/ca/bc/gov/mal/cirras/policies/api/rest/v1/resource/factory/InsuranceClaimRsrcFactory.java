@@ -19,12 +19,12 @@ import ca.bc.gov.mal.cirras.policies.persistence.v1.dto.ClaimSearchDto;
 import ca.bc.gov.mal.cirras.policies.persistence.v1.dto.ClaimDto;
 import ca.bc.gov.mal.cirras.policies.persistence.v1.dto.VarietyDto;
 import ca.bc.gov.mal.cirras.policies.service.api.v1.model.factory.InsuranceClaimFactory;
-import ca.bc.gov.nrs.common.wfone.rest.resource.RelLink;
-import ca.bc.gov.nrs.wfone.common.persistence.dao.DaoException;
-import ca.bc.gov.nrs.wfone.common.rest.endpoints.resource.factory.BaseResourceFactory;
-import ca.bc.gov.nrs.wfone.common.service.api.model.factory.FactoryContext;
-import ca.bc.gov.nrs.wfone.common.service.api.model.factory.FactoryException;
-import ca.bc.gov.nrs.wfone.common.webade.authentication.WebAdeAuthentication;
+import ca.bc.gov.mal.pit.common.rest.resource.RelLink;
+import ca.bc.gov.mal.pit.common.persistence.dao.DaoException;
+import ca.bc.gov.mal.pit.common.rest.endpoints.resource.factory.BaseResourceFactory;
+import ca.bc.gov.mal.pit.common.service.api.model.factory.FactoryContext;
+import ca.bc.gov.mal.pit.common.service.api.model.factory.FactoryException;
+import ca.bc.gov.mal.pit.common.webade.authentication.WebAdeAuthentication;
 
 public class InsuranceClaimRsrcFactory extends BaseResourceFactory implements InsuranceClaimFactory {
 	

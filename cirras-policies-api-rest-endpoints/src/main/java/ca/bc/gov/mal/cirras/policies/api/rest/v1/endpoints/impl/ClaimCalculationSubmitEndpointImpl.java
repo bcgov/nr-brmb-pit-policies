@@ -7,10 +7,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import ca.bc.gov.nrs.common.wfone.rest.resource.MessageListRsrc;
-import ca.bc.gov.nrs.wfone.common.rest.endpoints.BaseEndpointsImpl;
-import ca.bc.gov.nrs.wfone.common.service.api.NotFoundException;
-import ca.bc.gov.nrs.wfone.common.service.api.ValidationFailureException;
+import ca.bc.gov.mal.pit.common.rest.resource.MessageListRsrc;
+import ca.bc.gov.mal.pit.common.rest.endpoints.BaseEndpointsImpl;
+import ca.bc.gov.mal.pit.common.service.api.NotFoundException;
+import ca.bc.gov.mal.pit.common.service.api.ValidationFailureException;
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.endpoints.security.Scopes;
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.ClaimCalculationSubmitRsrc;
 import ca.bc.gov.mal.cirras.policies.service.api.v1.CirrasPolicyService;

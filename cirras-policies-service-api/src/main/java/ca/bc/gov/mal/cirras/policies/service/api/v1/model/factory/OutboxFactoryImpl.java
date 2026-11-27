@@ -31,7 +31,7 @@ import ca.bc.gov.mal.cirras.policies.persistence.v1.dto.InsuredGrowerContactsOut
 import ca.bc.gov.mal.cirras.policies.persistence.v1.dto.PolicyOutboxDto;
 import ca.bc.gov.mal.cirras.policies.persistence.v1.dto.ProductOutboxDto;
 import ca.bc.gov.mal.cirras.policies.persistence.v1.dto.TelecomOutboxDto;
-import ca.bc.gov.nrs.wfone.common.service.api.model.factory.FactoryException;
+import ca.bc.gov.mal.pit.common.service.api.model.factory.FactoryException;
 
 public class OutboxFactoryImpl implements OutboxFactory {
 

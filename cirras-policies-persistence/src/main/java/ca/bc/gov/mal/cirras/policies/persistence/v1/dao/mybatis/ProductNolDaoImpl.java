@@ -12,8 +12,8 @@ import org.springframework.stereotype.Repository;
 import ca.bc.gov.mal.cirras.policies.persistence.v1.dao.ProductNolDao;
 import ca.bc.gov.mal.cirras.policies.persistence.v1.dao.mybatis.mapper.ProductNolMapper;
 import ca.bc.gov.mal.cirras.policies.persistence.v1.dto.ProductNolDto;
-import ca.bc.gov.nrs.wfone.common.persistence.dao.DaoException;
-import ca.bc.gov.nrs.wfone.common.persistence.dao.mybatis.BaseDao;
+import ca.bc.gov.mal.pit.common.persistence.dao.DaoException;
+import ca.bc.gov.mal.pit.common.persistence.dao.mybatis.BaseDao;
 
 
 @Repository

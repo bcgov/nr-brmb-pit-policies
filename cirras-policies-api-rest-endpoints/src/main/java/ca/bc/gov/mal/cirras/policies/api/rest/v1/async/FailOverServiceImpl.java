@@ -5,10 +5,10 @@ import org.slf4j.LoggerFactory;
 
 //import ca.bc.gov.nrs.wfhr.payroll.persistence.v1.dao.SyncOwnershipDao;
 //import ca.bc.gov.nrs.wfhr.payroll.persistence.v1.dto.SyncOwnershipDto;
-//import ca.bc.gov.nrs.wfone.common.persistence.dao.DaoException;
-import ca.bc.gov.nrs.wfone.common.service.api.NotFoundException;
-import ca.bc.gov.nrs.wfone.common.service.api.ServiceException;
-import ca.bc.gov.nrs.wfone.common.webade.authentication.WebAdeAuthentication;
+//import ca.bc.gov.mal.pit.common.persistence.dao.DaoException;
+import ca.bc.gov.mal.pit.common.service.api.NotFoundException;
+import ca.bc.gov.mal.pit.common.service.api.ServiceException;
+import ca.bc.gov.mal.pit.common.webade.authentication.WebAdeAuthentication;
 
 public class FailOverServiceImpl implements FailOverService {
 

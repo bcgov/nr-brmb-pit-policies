@@ -22,7 +22,7 @@ import ca.bc.gov.mal.cirras.policies.service.api.v1.EventPublisher;
 import ca.bc.gov.mal.cirras.policies.service.api.v1.EventPublisherException;
 
 import ca.bc.gov.mal.cirras.policies.model.v1.PoliciesEventTypes;
-import ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.Oauth2ClientException;
+import ca.bc.gov.mal.pit.common.webade.oauth2.token.client.Oauth2ClientException;
 
 public class EventPublisherTest extends EndpointsTest {
 	private static final Logger logger = LoggerFactory.getLogger(EventPublisherTest.class);

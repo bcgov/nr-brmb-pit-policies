@@ -18,8 +18,8 @@ import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.EndpointsRsrc;
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.factory.InsuranceClaimRsrcFactory;
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.factory.ProductRsrcFactory;
 import ca.bc.gov.mal.cirras.policies.api.rest.v1.resource.types.ResourceTypes;
-import ca.bc.gov.nrs.common.wfone.rest.resource.RelLink;
-import ca.bc.gov.nrs.wfone.common.rest.endpoints.BaseEndpointsImpl;
+import ca.bc.gov.mal.pit.common.rest.resource.RelLink;
+import ca.bc.gov.mal.pit.common.rest.endpoints.BaseEndpointsImpl;
 
 public class TopLevelEndpointsImpl extends BaseEndpointsImpl implements TopLevelEndpoints {
 	/** Logger. */
